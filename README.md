@@ -15,7 +15,7 @@ Note: semua skema ppengujian akan memasukkan telah dirancang untuk memberikan pa
 **Input**:
 ```bash
 24.99
-31.99
+999
 58.15
 27.55
 0

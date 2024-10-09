@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="X01"/>
+        <attribute name="authors" value="hp"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-09 04:45:49 PM"/>
+        <attribute name="created" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMDk7MDQ6NDU6MTAgUE07MjU3Ng=="/>
+        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMDk7MDQ6NDU6MzQgUE07MTtocDtMQVBUT1AtVVJUNkY3TEU7MjAyNC0xMC0wOTswNDozNDozMSBQTTtYMDEuZnByZzs2MDQ3"/>
+        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMDk7MDQ6NDU6NDkgUE07MTsyNjk2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="harga" type="Real" array="False" size=""/>
+            <declare name="stop" type="Boolean" array="False" size=""/>
+            <declare name="totalharga" type="Real" array="False" size=""/>
+            <declare name="kecil" type="Real" array="False" size=""/>
+            <assign variable="totalharga" expression="0"/>
+            <assign variable="stop" expression="true"/>
+            <assign variable="kecil" expression="1000"/>
+            <while expression="stop = true">
+                <input variable="harga"/>
+                <if expression="harga==0">
+                    <then>
+                        <assign variable="stop" expression="false"/>
+                    </then>
+                    <else>
+                        <if expression="kecil&lt;harga">
+                            <then/>
+                            <else>
+                                <assign variable="kecil" expression="harga"/>
+                            </else>
+                        </if>
+                        <assign variable="totalharga" expression="totalharga+harga"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="totalharga&gt;100">
+                <then>
+                    <assign variable="totalharga" expression="totalharga-kecil"/>
+                </then>
+                <else>
+                    <assign variable="totalharga" expression="totalharga"/>
+                </else>
+            </if>
+            <output expression="ToFixed(totalharga,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
